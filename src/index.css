@@ -1,0 +1,10 @@
+@import "@fontsource/inter";
+@import "@fontsource/lexend";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+	@apply font-inter;
+}
