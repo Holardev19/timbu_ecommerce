@@ -304,7 +304,7 @@ const Cart = () => {
 									Subtotal
 								</span>
 								<span className="text-[#060709] text-sm font-normal font-lexend">
-									$497.00
+									$250.00
 								</span>
 							</li>
 
