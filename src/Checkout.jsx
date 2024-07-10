@@ -827,7 +827,7 @@ const Checkout = () => {
 						</div>
 
 						{/* The line */}
-						<div className="w-[20rem] h-[0.0625rem] bg-[#F4F4F4]"></div>
+						<div className="w-[20rem] h-[0.0625rem] bg-[#F4F4F4] md:w-[19rem]"></div>
 
 						<div className="flex justify-between items-center self-stretch">
 							<p className="font-lexend text-sm font-normal leading-5 text-[#9D9EA2]">
@@ -854,7 +854,7 @@ const Checkout = () => {
 						</div>
 
 						{/* Another line */}
-						<div className="w-[23rem] h-[0.0625rem] bg-[#F4F4F4]  sm:w-[33.5rem] lg:w-[21rem] xl:w-[32rem]"></div>
+						<div className="w-[23rem] h-[0.0625rem] bg-[#F4F4F4]  md:w-[19rem]"></div>
 
 						<article className="text-[#5E5F60] font-lexend text-sm font-normal leading-5">
 							I confirm that my address is 100% correct and WILL

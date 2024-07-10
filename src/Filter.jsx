@@ -2,7 +2,7 @@ import propTypes from "prop-types";
 import star from "./assets/star.svg";
 import starEmpty from "./assets/starEmpty.svg";
 
-const Filter = ({ className }) => {
+const Filter = () => {
 	const categories = [
 		{ category: "Tyres", available: 43 },
 		{ category: "Brakes", available: 40 },
@@ -29,7 +29,7 @@ const Filter = ({ className }) => {
 	];
 
 	return (
-		<div className={className}>
+		<div className="w-[15rem] border-r mt-10">
 			<div className="w-full flex flex-col pr-8 items-start gap-5 sm:w-[11rem] sm:pr-0">
 				<div className="flex pt-[1.0625rem] pb-6 border-b gap-2 self-stretch sm:w-40">
 					<p className="font-lexend text-[1.125rem] font-normal">
