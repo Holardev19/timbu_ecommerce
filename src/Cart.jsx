@@ -46,7 +46,7 @@ const Cart = () => {
 				</div>
 			</div>
 
-			<div className="w-full h-[2.5rem] hidden lg:block"></div>
+			<div className="w-full h-[2.5rem] hidden sm:block"></div>
 
 			{/* For small screen */}
 			<div className=" items-center gap-2 flex justify-center w-full py-3 px-6 xxs:px-4 border-t lg:hidden ">
