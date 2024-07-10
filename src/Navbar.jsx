@@ -53,7 +53,7 @@ const Navbar = () => {
 				</div>
 			</div>
 
-			<div className="w-full h-[2.5rem] hidden sm:block"></div>
+			<div className="w-full h-[2.5rem] hidden lg:block"></div>
 
 			<div className=" items-center border gap-2 flex justify-center w-full py-3 px-6 xxs:px-4  lg:hidden ">
 				<input
