@@ -4,6 +4,7 @@ import Info from "./Info";
 import Filter from "./Filter";
 import Shop from "./Shop";
 import Shopresponsive from "./Shopresponsive";
+import Productmobile from "./Productmobile";
 
 const Productpage = () => {
 	return (
@@ -12,11 +13,11 @@ const Productpage = () => {
 			<Navbar />
 			<Info />
 
-			<div className="hidden lg:flex gap-16 px-8 w-[100%]">
+			<div className="hidden lg:flex gap-8 px-8 w-[100%]">
 				<Filter className="w-[15rem] border-r mt-10" />
-				<Shop className=" mt-10 w-[54rem] " />
+				<Shop />
 			</div>
-
+			<Productmobile />
 			<Shopresponsive />
 		</>
 	);

@@ -33,10 +33,6 @@ const Navbar = () => {
 				</div>
 
 				<div className="flex justify-end items-center gap-4">
-					<p className="font-lexend text-[rgba(70,73,79,1)]">
-						Your Account
-					</p>
-
 					<div className="w-[0.0625rem] h-[0.75rem] bg-[rgba(200,201,203,1)]"></div>
 
 					<Link to="/cart">
@@ -59,7 +55,7 @@ const Navbar = () => {
 
 			<div className=" items-center border gap-2 flex justify-center w-full py-3 px-6 xxs:px-4  lg:hidden ">
 				<input
-					className="font-lexend flex w-[25rem] h-[3rem] pt-[0.25rem] pr-[0.25rem] pb-[0.25rem] pl-[1.5rem] items-center gap-2 border border-[#F4F4F4] rounded-[6.25rem] outline-none font-normal"
+					className="font-lexend flex  h-[3rem] pt-[0.25rem] pr-[0.25rem] pb-[0.25rem] pl-[1.5rem] items-center gap-2 border border-[#F4F4F4] rounded-[6.25rem] outline-none font-normal xxs:w-[15rem] xs:w-[21rem]"
 					type="text"
 					placeholder="Search"
 				/>

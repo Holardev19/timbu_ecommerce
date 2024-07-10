@@ -46,12 +46,12 @@ const Cart = () => {
 				</div>
 			</div>
 
-			<div className="w-full h-[2.5rem]"></div>
+			<div className="w-full h-[2.5rem] hidden lg:block"></div>
 
 			{/* For small screen */}
-			<div className=" items-center gap-2 flex justify-center w-full py-3 px-6 xxs:px-4  lg:hidden ">
+			<div className=" items-center gap-2 flex justify-center w-full py-3 px-6 xxs:px-4 border-t lg:hidden ">
 				<input
-					className="font-lexend flex w-[25rem] h-[2.5rem] pt-[0.25rem] pr-[0.25rem] pb-[0.25rem] pl-[1.5rem] items-center gap-2 border border-[#F4F4F4] rounded-[6.25rem] outline-none font-normal"
+					className="font-lexend flex w-[25rem] h-[2.5rem] pt-[0.25rem] pr-[0.25rem] pb-[0.25rem] pl-[1.5rem] items-center gap-2 border border-[#F4F4F4] rounded-[6.25rem] outline-none font-normal xxs:w-[15rem] xs:w-[21rem]"
 					type="text"
 					placeholder="Search"
 				/>
@@ -97,8 +97,8 @@ const Cart = () => {
 
 			{/* Large screen */}
 
-			<section className="hidden lg:flex lg:flex-row gap-[3rem] py-8 px-[3rem] justify-between">
-				<div className=" w-[34rem] flex flex-col">
+			<section className="hidden lg:flex lg:flex-row gap-[3rem] py-8 px-[3rem] justify-between xl:flex xl:flex-row xl:gap-16 xl:justify-between xl:ml-14 xl:mr-16">
+				<div className="w-[34rem] flex flex-col xl:w-[37rem]">
 					<div className="flex pb-4 justify-between items-center self-stretch border-b">
 						<p className="text-[#060709] font-lexend text-[1.25rem] font-normal">
 							Your Cart
@@ -110,9 +110,9 @@ const Cart = () => {
 					</div>
 
 					{/* Main */}
-					<div className="flex flex-col items-end gap-4 self-stretch">
+					<div className="flex flex-col items-end gap-4 self-stretch ">
 						{/* First part */}
-						<div className="flex pb-4 items-start gap-4 self-stretch border-b">
+						<div className="flex pb-4 items-start gap-4 self-stretch border-b mt-4">
 							{/* The image */}
 							<div className="flex w-14 h-14 justify-center items-center gap-2 rounded-[0.375rem] border bg-[#fff]">
 								<img src={smallTyre} alt="tyre" />
@@ -218,7 +218,7 @@ const Cart = () => {
 					</div>
 
 					{/* Put it here */}
-					<div className="flex flex-row justify-between">
+					<div className="flex flex-row justify-between mt-4 ">
 						<p className="font-lexend text-[1rem] font-normal text-[#17AF26]">
 							Delivery
 						</p>
@@ -231,7 +231,7 @@ const Cart = () => {
 					{/* Delevery Part */}
 
 					<div className="flex flex-row gap-4 mt-4">
-						<div className="flex p-4 flex-col items-start gap-4 rounded-xl border bg-[#fff]">
+						<div className="flex p-4 flex-col items-start gap-4 rounded-xl border bg-[#fff] flex-auto">
 							<div className="flex w-[3rem] h-[3rem] justify-center items-center gap-2 rounded-[6.25rem] text-[#F2F6F4]">
 								<img
 									className="flex w-[1.375rem] h-[1.375rem] justify-center items-center shrink-0"
@@ -251,7 +251,7 @@ const Cart = () => {
 							</p>
 						</div>
 
-						<div className="flex p-4 flex-col items-start gap-4 rounded-xl border bg-[#fff]">
+						<div className="flex p-4 flex-col items-start gap-4 rounded-xl border bg-[#fff] flex-initial">
 							<div className="flex w-[3rem] h-[3rem] justify-center items-center gap-2 rounded-[6.25rem] bg-[#F2F6F4]">
 								<img
 									className="flex w-[1.375rem] h-[1.375rem] justify-center items-center shrink-0"
@@ -272,7 +272,7 @@ const Cart = () => {
 
 						{/* Free returns */}
 
-						<div className="flex flex-row items-start gap-4">
+						<div className="flex flex-row items-start gap-4 flex-initial">
 							<div className="flex p-4 flex-col items-start gap-4 self-stretch rounded-xl border bg-[#fff]">
 								<div className="flex w-[3rem] h-[3rem] justify-center items-center gap-2 rounded-[6.25rem] bg-[#F2F6F4]">
 									<img
@@ -296,7 +296,7 @@ const Cart = () => {
 				{/* Delivery and free return */}
 
 				{/* Second part large screen */}
-				<div>
+				<div className="xl:w-[35%]">
 					<div className="flex p-5 flex-col items-start gap-5 self-stretch rounded-2xl border ">
 						<ul className="flex flex-col items-start gap-4 self-stretch">
 							<li className="flex justify-between items-center self-stretch">
@@ -327,7 +327,7 @@ const Cart = () => {
 							</li>
 						</ul>
 
-						<div className="flex items-start gap-4 justify-center">
+						<div className="flex w-full items-start gap-4 justify-center xl:justify-between">
 							<div className="flex h-[3rem] py-1 px-3 items-center gap-2 flex-1 rounded-lg border bg-[#fff]">
 								<input
 									className="font-lexend text-sm font-normal w-[6.375rem] outline-none"
@@ -372,7 +372,7 @@ const Cart = () => {
 						</div>
 
 						<Link to="/checkout">
-							<button className="flex h-12 px-10 justify-center items-center gap-4 self-stretch rounded-[6.25rem] bg-[#C8C9CB] focus:bg-[#17AF26] hover:bg-[#518c57] active:bg-[#17AF26] transition">
+							<button className="flex h-12 px-10 justify-center items-center gap-4 self-stretch rounded-[6.25rem] bg-[#C8C9CB] focus:bg-[#17AF26] hover:bg-[#518c57] active:bg-[#17AF26] transition lg:ml-16 xl:ml-16 text-[#fff]">
 								Place order
 							</button>
 						</Link>
@@ -610,7 +610,7 @@ const Cart = () => {
 								Subtotal
 							</span>
 							<span className="text-[#060709] text-sm font-normal font-lexend">
-								$497.00
+								$250.00
 							</span>
 						</li>
 
@@ -633,8 +633,8 @@ const Cart = () => {
 						</li>
 					</ul>
 
-					<div className="flex items-start gap-4 justify-center">
-						<div className="flex h-[3rem] py-1 px-3 items-center gap-2 flex-1 rounded-lg border bg-[#fff]">
+					<div className="flex items-start gap-4 justify-center xl:items-center xl:justify-between w-full ">
+						<div className="flex h-[3rem] py-1 px-3 items-center gap-2 flex-1 rounded-lg border bg-[#fff] max-w-36">
 							<input
 								className="font-lexend text-sm font-normal w-[6.375rem] outline-none"
 								type="text"
@@ -653,8 +653,8 @@ const Cart = () => {
 
 					<div className="flex pt-4 flex-col items-start gap-4 self-stretch border-t">
 						{/* Status bar */}
-						<div className="flex h-[0.375rem] flex-col items-start gap-2 self-stretch rounded-[6.25rem] bg-[#F4F4F4] w-[18.875rem]">
-							<div className="w-[13.4375rem] flex-1 rounded-[6.25rem] bg-[#17AF26]"></div>
+						<div className="flex h-[0.375rem] flex-col items-start gap-2 self-stretch rounded-[6.25rem] bg-[#F4F4F4]  xxs:w-[17.2rem] sm:w-[34.5rem] md:w-[42.7rem]">
+							<div className=" flex-1 rounded-[6.25rem] bg-[#17AF26] xxs:w-[11rem] sm:w-[20rem] md:w-[27rem]"></div>
 						</div>
 
 						<div className="flex flex-col items-start gap-[0.375rem] self-stretch">
@@ -678,7 +678,7 @@ const Cart = () => {
 					</div>
 
 					<Link to="/checkout">
-						<button className="flex h-12 px-10 justify-center items-center gap-4 self-stretch rounded-[6.25rem] bg-[#C8C9CB] hover:bg-[#518c57] focus:bg-[#17AF26] active:bg-[#17AF26] transition">
+						<button className="flex h-12 px-10 justify-center items-center gap-4 self-stretch rounded-[6.25rem] bg-[#C8C9CB] hover:bg-[#518c57] focus:bg-[#17AF26] w-full active:bg-[#17AF26] transition xxs:ml-12 sm:ml-[9rem] md:ml-[11rem] text-[#fff]">
 							Place order
 						</button>
 					</Link>
@@ -695,9 +695,9 @@ const Cart = () => {
 						</p>
 					</button> */}
 					{/* Just a line */}
-					<div className="w-[18.875rem] h-[0.0625rem] bg-[#F4F4F4]"></div>
+					<div className="w-[18.875rem] h-[0.0625rem] bg-[#F4F4F4] sm:w-[34rem] md:w-[42.7rem]"></div>
 
-					<div className="flex flex-col items-start gap-4">
+					<div className="flex flex-col items-start gap-4 sm:flex sm:flex-row sm:justify-center sm:items-center md:mx-auto">
 						<p className="text-[#5E5F60] font-lexend text-[0.75rem] font-light tracking-tight">
 							SECURE PAYMENTS PROVIDED BY
 						</p>

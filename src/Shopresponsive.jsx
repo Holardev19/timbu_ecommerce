@@ -96,7 +96,7 @@ const Shopresponsive = () => {
 
 	return (
 		<>
-			<div className="lg:hidden mt-10">
+			<div className="hidden sm:block lg:hidden mt-10">
 				{/* Header */}
 				<header className="flex pr-6 pb-4 pl-6 justify-between items-center border-b">
 					<p className="text-[#1A1E26] text-base font-normal font-lexend">
@@ -131,7 +131,7 @@ const Shopresponsive = () => {
 					</p>
 
 					<div
-						className="flex py-1 items-start gap-8 self-stretch overflow-hidden"
+						className="flex py-1 items-center justify-center gap-8 self-stretch overflow-hidden"
 						id="productList">
 						<button
 							onClick={scrollLeft}

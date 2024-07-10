@@ -1,4 +1,4 @@
-import propTypes from "prop-types";
+import { Link } from "react-router-dom";
 import imageOne from "./assets/imageOne.svg";
 import star from "./assets/star.svg";
 import imageTwo from "./assets/imageTwo.svg";
@@ -8,9 +8,10 @@ import imageFive from "./assets/imageFive.png";
 import imageSix from "./assets/imageSix.svg";
 import imageSeven from "./assets/imageSeven.svg";
 import imageEight from "./assets/imageEight.svg";
-import { Link } from "react-router-dom";
+import arrowRight from "./assets/arrowRight.svg";
+import arrowLeft from "./assets/arrowLeft.svg";
 
-const Shop = ({ className }) => {
+const Productmobile = () => {
 	const generalInfo = [
 		{
 			text: "Tyre size",
@@ -82,16 +83,19 @@ const Shop = ({ className }) => {
 
 	const button = "Add to Cart";
 
-	return (
-		<div className="mt-10 w-[47.5rem] xl:w-full">
-			{/* Header */}
-			<header className="flex justify-center items-center p-4 border-b">
-				<p className="font-lexend text-[#1A1E26] text-2xl font-normal sm:mx-auto">
-					Tyres
-				</p>
-			</header>
+	const productList = document.getElementById("productList");
 
-			<article className="text-[#5E5F60] font-lexend text-base font-normal self-stretch mt-6">
+	function scrollLeft() {
+		productList.scrollBy({ left: 1000, behavior: "smooth" });
+	}
+
+	function scrollRight() {
+		productList.scrollBy({ left: -1000, behavior: "smooth" });
+	}
+
+	return (
+		<div className="sm:hidden">
+			<article className="mt-6 mx-4 text-[#5E5F60] font-lexend text-sm font-normal self-stretch">
 				Choosing the right tyres is crucial for vehicle performance,
 				safety, and comfort. Our online store offers a comprehensive
 				selection of high-quality tyres from top brands such as
@@ -107,14 +111,28 @@ const Shop = ({ className }) => {
 			</article>
 
 			{/* Top selling */}
-			<section className="flex flex-col py-6 px-4 items-start gap-6 rounded-2xl bg-[#F2F6F4] mt-7">
+			<section className="flex flex-col py-6 items-start gap-6 rounded-2xl bg-[#F2F6F4] mt-7 relative">
 				<p className="text-[#060709] font-lexend text-2xl font-medium">
 					Top Selling
 				</p>
 
-				<div className="flex py-1 items-center justify-center gap-8 self-stretch">
+				<div
+					className="flex py-1 items-center justify-center gap-8 self-stretch overflow-x-hidden w-full"
+					id="productList">
+					<button
+						onClick={scrollLeft}
+						className="absolute left-[1rem] top-[50%] flex w-[2.25rem] h-[2.25rem] justify-center items-center gap-2 rounded-[6.25rem] bg-[#fff] shadow cursor-pointer sm:hidden">
+						<img src={arrowLeft} alt="" />
+					</button>
+
+					<button
+						onClick={scrollRight}
+						className="absolute right-[1rem] top-[50%] flex w-[2.25rem] h-[2.25rem] justify-center items-center gap-2 rounded-[6.25rem] bg-[#fff] shadow cursor-pointer sm:hidden">
+						<img src={arrowRight} alt="" />
+					</button>
+
 					{/* one */}
-					<div className="flex flex-col w-64 items-start gap-5 bg-[#fff]">
+					<div className="flex flex-col p-y items-start gap-5 bg-[#fff]">
 						{/* The image */}
 						<div className="flex h-[15rem] justify-center items-center gap-2 self-stretch bg-[#f4f4f4]">
 							<img
@@ -131,7 +149,7 @@ const Shop = ({ className }) => {
 							</p>
 
 							{/* The tyre full name */}
-							<p className="text-[#1A1E26] items-center justify-center font-lexend text-lg font-normal">
+							<p className="text-[#1A1E26] items-center font-lexend text-[1rem] font-normal text-center px-2">
 								{fullNames[0]}
 							</p>
 
@@ -145,7 +163,7 @@ const Shop = ({ className }) => {
 							{/* Text and id number */}
 							<div className="flex items-start gap-2">
 								<div className="flex h-8 pt-1 pr-[0.625rem] pb-[0.3125rem] pl-[0.625rem] justify-center items-center gap-3 rounded-[0.25rem] border bg-[#fff]">
-									<p className="text-[#1A1E26] font-lexend text-xs font-normal">
+									<p className="text-[#1A1E26] font-lexend text-[0.5rem] font-normal">
 										{generalInfo[0].text}
 									</p>
 								</div>
@@ -157,13 +175,14 @@ const Shop = ({ className }) => {
 							</div>
 
 							{/* Rating and review */}
-							<div className="flex justify-center items-center gap-3 rounded-[6.25rem] bg-[#fff]">
+							<div className="flex justify-center items-center gap-2 rounded-[6.25rem] bg-[#fff] px-2">
 								<span className="flex">
 									<img className="pr-1" src={star} alt="" />
+
 									{generalInfo[0].rating}
 								</span>
 
-								<div className="w-[0.0625rem] h-3 bg-[#C8C9CB]"></div>
+								<div className="w-[0rem] h-3 bg-[#C8C9CB]"></div>
 
 								<span>
 									<span className="pr-1 text-[#060709] font-lexend text-sm font-normal">
@@ -187,11 +206,13 @@ const Shop = ({ className }) => {
 
 							{/* The button */}
 							<div>
-								<button className="flex h-10 px-6 justify-center items-center w-[10em] gap-2 self-stretch rounded-[6.25rem] bg-[#17AF26]">
-									<p className="font-lexend text-sm font-medium text-[#fff]">
-										<Link to="/cart"> {button}</Link>
-									</p>
-								</button>
+								<Link to="/cart">
+									<button className="flex h-10 px-6 justify-center items-center gap-2 self-stretch rounded-[6.25rem] bg-[#17AF26] w-28">
+										<p className="font-lexend text-sm font-medium text-[#fff]">
+											{button}
+										</p>
+									</button>
+								</Link>
 							</div>
 						</div>
 					</div>
@@ -214,7 +235,7 @@ const Shop = ({ className }) => {
 							</p>
 
 							{/* The tyre full name */}
-							<p className="text-[#1A1E26] items-center font-lexend text-lg  font-normal">
+							<p className="text-[#1A1E26] items-center font-lexend text-[1rem] font-normal text-center w-40">
 								{fullNames[1]}
 							</p>
 
@@ -226,9 +247,9 @@ const Shop = ({ className }) => {
 							</div>
 
 							{/* Text and id number */}
-							<div className="flex items-start gap-2">
+							<div className="flex items-start gap-1 px-2">
 								<div className="flex h-8 pt-1 pr-[0.625rem] pb-[0.3125rem] pl-[0.625rem] justify-center items-center gap-3 rounded-[0.25rem] border bg-[#fff]">
-									<p className="text-[#1A1E26] font-lexend text-xs font-normal">
+									<p className="text-[#1A1E26] font-lexend text-[0.5rem] font-normal">
 										{generalInfo[0].text}
 									</p>
 								</div>
@@ -240,13 +261,13 @@ const Shop = ({ className }) => {
 							</div>
 
 							{/* Rating and review */}
-							<div className="flex justify-center items-center gap-3 rounded-[6.25rem] bg-[#fff]">
+							<div className="flex justify-center items-center gap-2 px-2 rounded-[6.25rem] bg-[#fff]">
 								<span className="flex">
 									<img className="pr-1" src={star} alt="" />
 									{generalInfo[0].rating}
 								</span>
 
-								<div className="w-[0.0625rem] h-3 bg-[#C8C9CB]"></div>
+								<div className="w-[0rem] h-3 bg-[#C8C9CB]"></div>
 
 								<span>
 									<span className="pr-1 text-[#060709] font-lexend text-sm font-normal">
@@ -260,9 +281,6 @@ const Shop = ({ className }) => {
 
 							{/* Costs */}
 							<div className="flex items-center gap-4">
-								<span className="text-[#9D9EA2] font-lexend text-sm font-normal line-through hidden">
-									{prices[0]}
-								</span>
 								<span className="text-[#EB2606] font-lexend text-base font-normal">
 									{prices[2]}
 								</span>
@@ -271,7 +289,7 @@ const Shop = ({ className }) => {
 							{/* The button */}
 							<div>
 								<Link to="/cart">
-									<button className="flex h-10 px-6 justify-center items-center w-[10em] gap-2 self-stretch rounded-[6.25rem] bg-[#17AF26]">
+									<button className="flex h-10 px-6 justify-center items-center gap-2 self-stretch rounded-[6.25rem] bg-[#17AF26] w-[7rem]">
 										<p className="font-lexend text-sm font-medium text-[#fff]">
 											{button}
 										</p>
@@ -300,7 +318,7 @@ const Shop = ({ className }) => {
 							</p>
 
 							{/* The tyre full name */}
-							<p className="text-[#1A1E26] items-center font-lexend text-lg  font-normal">
+							<p className="text-[#1A1E26] text-center items-center px-2 font-lexend text-[1rem] font-normal w-[7rem]">
 								{fullNames[2]}
 							</p>
 
@@ -312,9 +330,9 @@ const Shop = ({ className }) => {
 							</div>
 
 							{/* Text and id number */}
-							<div className="flex items-start gap-2">
+							<div className="flex items-start gap-1 px-2">
 								<div className="flex h-8 pt-1 pr-[0.625rem] pb-[0.3125rem] pl-[0.625rem] justify-center items-center gap-3 rounded-[0.25rem] border bg-[#fff]">
-									<p className="text-[#1A1E26] font-lexend text-xs font-normal">
+									<p className="text-[#1A1E26] font-lexend text-[0.5rem] font-normal">
 										{generalInfo[0].text}
 									</p>
 								</div>
@@ -326,13 +344,13 @@ const Shop = ({ className }) => {
 							</div>
 
 							{/* Rating and review */}
-							<div className="flex justify-center items-center gap-3 rounded-[6.25rem] bg-[#fff]">
+							<div className="flex justify-center items-center gap-3 rounded-[6.25rem] bg-[#fff] px-2">
 								<span className="flex">
 									<img className="pr-1" src={star} alt="" />
 									{generalInfo[0].rating}
 								</span>
 
-								<div className="w-[0.0625rem] h-3 bg-[#C8C9CB]"></div>
+								<div className="w-[0rem] h-3 bg-[#C8C9CB]"></div>
 
 								<span>
 									<span className="pr-1 text-[#060709] font-lexend text-sm font-normal">
@@ -357,7 +375,7 @@ const Shop = ({ className }) => {
 							{/* The button */}
 							<div>
 								<Link to="/cart">
-									<button className="flex h-10 px-6 justify-center items-center w-[10em] gap-2 self-stretch rounded-[6.25rem] bg-[#17AF26]">
+									<button className="flex h-10 px-6 justify-center items-center gap-2 self-stretch rounded-[6.25rem] bg-[#17AF26] w-[7rem]">
 										<p className="font-lexend text-sm font-medium text-[#fff]">
 											{button}
 										</p>
@@ -370,11 +388,9 @@ const Shop = ({ className }) => {
 				</div>
 			</section>
 
-			{/* Products Listing */}
-
-			<section className="grid grid-cols-3 grid-rows-3 gap-[2rem] mt-6 place-items-center">
+			<section className="grid grid-cols-1 grid-rows-9 gap-[1rem] mt-6 place-items-center">
 				{/* Product One */}
-				<div className="flex flex-col w-64 items-start gap-5 bg-[#fff]">
+				<div className="flex flex-col w-80 items-start gap-5 bg-[#fff]  border-b-2 border-t-2 pb-4 pt-4">
 					{/* The image */}
 					<div className="flex h-[15rem] justify-center items-center gap-2 self-stretch bg-[#f4f4f4]">
 						<img
@@ -391,7 +407,7 @@ const Shop = ({ className }) => {
 						</p>
 
 						{/* The tyre full name */}
-						<p className="text-[#1A1E26] items-center font-lexend text-xl font-normal">
+						<p className="text-[#1A1E26] items-center font-lexend text-[0.75rem] font-normal px-2 w-">
 							{fullNames[3]}
 						</p>
 
@@ -457,7 +473,7 @@ const Shop = ({ className }) => {
 
 				{/* Product Two */}
 
-				<div className="flex flex-col w-64 items-start gap-5 bg-[#fff]">
+				<div className="flex flex-col w-80 items-start gap-5 bg-[#fff] border-b-2 pb-4">
 					{/* The image */}
 					<div className="flex h-[15rem] justify-center items-center gap-2 self-stretch bg-[#f4f4f4]">
 						<img
@@ -540,7 +556,7 @@ const Shop = ({ className }) => {
 
 				{/* Product Three */}
 
-				<div className="flex flex-col w-64 items-start gap-5 bg-[#fff]">
+				<div className="flex flex-col w-80 items-start gap-5 bg-[#fff] border-b-2 pb-4">
 					{/* The image */}
 					<div className="flex h-[15rem] justify-center items-center gap-2 self-stretch bg-[#f4f4f4]">
 						<img
@@ -623,7 +639,7 @@ const Shop = ({ className }) => {
 
 				{/* Product four */}
 
-				<div className="flex flex-col w-64 items-start gap-5 bg-[#fff]">
+				<div className="flex flex-col w-80 items-start gap-5 bg-[#fff] border-b-2 pb-4">
 					{/* The image */}
 					<div className="flex h-[15rem] justify-center items-center gap-2 self-stretch bg-[#f4f4f4]">
 						<img
@@ -705,7 +721,7 @@ const Shop = ({ className }) => {
 				</div>
 
 				{/* Product five */}
-				<div className="flex flex-col w-64 items-start gap-5 bg-[#fff]">
+				<div className="flex flex-col w-80 items-start gap-5 bg-[#fff] border-b-2 pb-4">
 					{/* The image */}
 					<div className="flex h-[15rem] justify-center items-center gap-2 self-stretch bg-[#f4f4f4]">
 						<img
@@ -774,6 +790,7 @@ const Shop = ({ className }) => {
 						</div>
 
 						{/* The button */}
+
 						<div>
 							<Link to="/cart">
 								<button className="flex h-10 px-6 justify-center items-center w-[10em] gap-2 self-stretch rounded-[6.25rem] bg-[#17AF26]">
@@ -788,7 +805,7 @@ const Shop = ({ className }) => {
 
 				{/* Product six */}
 
-				<div className="flex flex-col w-64 items-start gap-5 bg-[#fff]">
+				<div className="flex flex-col w-80 items-start gap-5 bg-[#fff] border-b-2 pb-4">
 					{/* The image */}
 					<div className="flex h-[15rem] justify-center items-center gap-2 self-stretch bg-[#f4f4f4]">
 						<img
@@ -870,7 +887,7 @@ const Shop = ({ className }) => {
 				</div>
 
 				{/* Product seven */}
-				<div className="flex flex-col w-64 items-start gap-5 bg-[#fff]">
+				<div className="flex flex-col w-80 items-start gap-5 bg-[#fff] border-b-2 pb-4">
 					{/* The image */}
 					<div className="flex h-[15rem] justify-center items-center gap-2 self-stretch bg-[#f4f4f4]">
 						<img
@@ -953,7 +970,7 @@ const Shop = ({ className }) => {
 
 				{/* Product eight */}
 
-				<div className="flex flex-col w-64 items-start gap-5 bg-[#fff]">
+				<div className="flex flex-col w-80 items-start gap-5 bg-[#fff] border-b-2 pb-4">
 					{/* The image */}
 					<div className="flex h-[15rem] justify-center items-center gap-2 self-stretch bg-[#f4f4f4]">
 						<img
@@ -1036,7 +1053,7 @@ const Shop = ({ className }) => {
 
 				{/* Product nine */}
 
-				<div className="flex flex-col w-64 items-start gap-5 bg-[#fff]">
+				<div className="flex flex-col w-80 items-start gap-5 bg-[#fff]  pb-4">
 					{/* The image */}
 					<div className="flex h-[15rem] justify-center items-center gap-2 self-stretch bg-[#f4f4f4]">
 						<img
@@ -1121,8 +1138,4 @@ const Shop = ({ className }) => {
 	);
 };
 
-Shop.propTypes = {
-	className: propTypes.string,
-};
-
-export default Shop;
+export default Productmobile;
