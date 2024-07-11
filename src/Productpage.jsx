@@ -14,7 +14,7 @@ const Productpage = () => {
 			<Info />
 
 			<div className="hidden lg:flex gap-8 px-8 w-[100%]">
-				<Filter className="w-[15rem] border-r mt-10" />
+				<Filter  />
 				<Shop />
 			</div>
 			<Productmobile />

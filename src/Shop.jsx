@@ -10,7 +10,7 @@ import imageSeven from "./assets/imageSeven.svg";
 import imageEight from "./assets/imageEight.svg";
 import { Link } from "react-router-dom";
 
-const Shop = ({ className }) => {
+const Shop = () => {
 	const generalInfo = [
 		{
 			text: "Tyre size",
@@ -83,7 +83,7 @@ const Shop = ({ className }) => {
 	const button = "Add to Cart";
 
 	return (
-		<div className="mt-10 w-[47.5rem] xl:w-full">
+		<div className="mt-10 ml-[1.5rem] w-[55rem] xl:w-full">
 			{/* Header */}
 			<header className="flex justify-center items-center p-4 border-b">
 				<p className="font-lexend text-[#1A1E26] text-2xl font-normal sm:mx-auto">
