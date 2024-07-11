@@ -92,7 +92,7 @@ const Checkout = () => {
 					</div>
 				</header>
 
-				<main className="flex flex-col w-[22rem] ">
+				<main className="flex flex-col w-[22rem] mr-4">
 					<div className="flex flex-col gap-3 p-4 m-0">
 						<div className="flex pb-6 justify-between items-center border-b w-[21.5rem]">
 							<div className="flex justify-center items-center gap-3 ">
@@ -547,7 +547,7 @@ const Checkout = () => {
 				</header>
 
 				{/* Main section */}
-				<main className="lg:flex lg:flex-row justify-between gap-[3rem] xxs:flex-col xxs:w-[22rem] lg:gap-8">
+				<main className="lg:flex lg:flex-row justify-between gap-[3rem] xxs:flex-col xxs:w-[22rem] lg:gap-8 xl:w-full xl:flex xl:justify-center xl:gap-4 xl:gap">
 					{/* The form */}
 					<div className="flex flex-col gap-3 p-4 w-[40rem] m-6 xxs:m-0">
 						<div className="flex pb-6 justify-between items-center border-b xxs:w-[21rem] sm:w-[37rem] md:w-[45rem] lg:w-[36rem]">
@@ -778,7 +778,7 @@ const Checkout = () => {
 					</div>
 
 					{/* The second part */}
-					<div className="flex p-6 flex-col items-start gap-5 flex-initial rounded-2xl border w-96  mt-6 mx-12 xxs:mx-4 pb-8 xxs:w-[21rem] sm:w-[37rem] md:w-[45rem] lg:w-[22rem] lg:h-[47rem] xl:w-[35rem]">
+					<div className="flex p-6 flex-col items-start gap-5 flex-initial rounded-2xl border w-96  mt-6 mx-12 xxs:mx-4 pb-8 xxs:w-[21rem] sm:w-[37rem] md:w-[45rem] lg:w-[22rem] lg:h-[47rem] xl:w-[27rem]">
 						<div className="flex flex-col items-start gap-4 self-stretch">
 							<div className="flex justify-between items-center self-stretch">
 								<p className="font-lexend text-sm font-normal text-[#9D9EA2]">
