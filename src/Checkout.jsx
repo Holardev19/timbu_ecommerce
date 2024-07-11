@@ -20,7 +20,7 @@ const Checkout = () => {
 	return (
 		<>
 			{/* base styling */}
-			<div className="sm:hidden">
+			<div className="sm:hidden box-border">
 				<div className="px-3 xs:px-6 py-3 flex justify-between items-center border-b">
 					<div className="flex items-center gap-3">
 						<img
@@ -547,7 +547,7 @@ const Checkout = () => {
 				</header>
 
 				{/* Main section */}
-				<main className="lg:flex lg:flex-row justify-between gap-[3rem] xxs:flex-col xxs:w-[22rem] lg:gap-8 xl:w-full xl:flex xl:justify-center xl:gap-4 xl:gap">
+				<main className="lg:flex lg:flex-row justify-between gap-[3rem] xxs:flex-col xxs:w-[22rem] lg:gap-8 xl:w-full xl:flex xl:justify-center xl:gap-4">
 					{/* The form */}
 					<div className="flex flex-col gap-3 p-4 w-[40rem] m-6 xxs:m-0">
 						<div className="flex pb-6 justify-between items-center border-b xxs:w-[21rem] sm:w-[37rem] md:w-[45rem] lg:w-[36rem]">
